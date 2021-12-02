@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+}
+aside{
+    background-color: #5B5A99;
+}
+svg:hover{
+    fill: #53B9EA;
+}
