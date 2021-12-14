@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
 :root{
     --dark-blue: #201D47; 
     --light-blue: #53B9EA;
-}
+    --text-primary: #FFFFFF;
+    --text-secondary: #5B5A99;
 
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Stick', sans-serif;
+}
 body{
     margin: 0;
     padding: 0;
@@ -21,6 +28,9 @@ aside{
     width: 300px;
     background: linear-gradient(180deg, rgba(38, 34, 80, 0.65) 0%, rgba(27, 25, 66, 0.85) 57.44%, #17163B 100%);
 }
+main{
+    padding: 38px 63px;
+}
 a{
     text-decoration: none;
     color: currentColor;
@@ -33,6 +43,9 @@ a{
     position: absolute;
     left: -15px;
     background: var(--light-color);
+}
+.page-wrapper{
+    display: flex;
 }
 .aside-nav ul li{
     margin: 38px 0;
@@ -50,7 +63,59 @@ a{
 }
 .active{
     color: var(--light-blue);
+    position: relative;
 }
 .aside-nav__link:hover{
     color: var(--light-blue);
+}
+.active:before,
+.notification:after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.notification:after{
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(180deg, #FF40A5 0%, #E14CD1 100%);
+    top: 50%;
+    right: -80px;
+}
+.active:before{
+    height: 12px;
+    width: 12px;
+    background: var(--light-blue);
+    box-shadow: 0px 0px 12px var(--light-blue);
+    top: 15%;
+    left: -47px;
+}
+.collapce{
+    position: absolute;
+    left: 250px;
+    bottom: 52px;
+}
+.collapce a:hover ~ svg path{
+    stroke: var(--light-blue)
+}
+
+/* main */
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+}
+.main-header-left{
+    width: 353px;
+}
+.main-header__title{
+    margin: 0;
+    color: var(--text-primary);
+}
+.main-header__subtitle{
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.main-header-right{
+    display: flex;
 }
